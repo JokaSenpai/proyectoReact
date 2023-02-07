@@ -1,0 +1,18 @@
+.buttonCart{
+    color: red;
+    border: none;
+    padding: 10px 15px;
+    font-size: 17px;
+    font-weight: 600;
+    
+}
+
+.buttonCart:hover{
+    border: none;
+    background-color:lightgray;
+}
+
+.cartIcon{
+    color: black;
+    padding-right: 4px;
+}

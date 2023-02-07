@@ -1,0 +1,26 @@
+.logoTori{
+    height: 7em;
+}
+.cartImg{
+    max-width:  3em;
+    max-height: 3em;
+    
+}
+
+.textBrand{
+    padding-left: 15px;
+    font-weight: 500;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: large;   
+
+}
+
+.divBrand{
+    align-content:initial;
+    justify-content: left;
+
+}
+
+
+
+
