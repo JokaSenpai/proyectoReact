@@ -1,27 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import CardComponent from '../CardComponent/CardComponent';
-import "./CardListComponent.css"
+import React, { useEffect, useState } from "react";
+import CardComponent from "../CardComponent/CardComponent";
+import "./CardListComponent.css";
+import { Link } from "react-router-dom";
 
 function CardListComponent() {
-    const [prod, setProds] = useState([]);
+  const [prod, setProds] = useState([]);
 
-    useEffect(()=>{
-        fetch('https://jsonplaceholder.typicode.com/users')
-          .then(response => response.json())
-          .then(json => setProds(json))
-    },[]);
+  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => response.json())
+      .then((json) => setProds(json));
+  }, []);
   return (
-   
-    <div className='Card-list'>
-    {prod.map((prod)=>{
-        return <CardComponent data={prod}/>
-    })}
+    <div className="Card-list">
+      {prod.map((prod) => {
+        return (
+          <Link to={`/detail/${prod.id}`}>
+            <CardComponent key={prod.id} data={prod}  />
+          </Link>
+        );
+      })}
     </div>
-    
-    
- 
-    
-  )
+  );
 }
 
 export default CardListComponent;

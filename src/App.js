@@ -13,30 +13,31 @@ import Otros from "./Pages/Otros/Otros";
 import Navbar from "./components/Navbar/Navbar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import CardListComponent from "./components/CardListComponent/CardListComponent";
+import CardDetails from "./Pages/CardDetails/CardDetails";
 
 
-
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <div className="contentxd">
         <header className="headerContent">
           <Navbar />
         </header>
+        <ItemListContainer>
+          <h1>
+            Bienvenido a ToriShop, la mejor tienda para comprar figuras
+            nuevas/usadas!
+          </h1>
+        </ItemListContainer>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Contacto" element={<Contacto />} />
           <Route path="/FigurasAnime" element={<FigurasAnime />} />
           <Route path="/FigurasComic" element={<FigurasComic />} />
           <Route path="/Otros" element={<Otros />} />
+          <Route path="/detail/:id" element={<CardDetails />} />
         </Routes>
-        <ItemListContainer>
-          <h1>
-            Bienvenido a ToriShop, la mejor tienda para comprar figuras
-            nuevas/usadas!
-          </h1>
-          <CardListComponent/>
-        </ItemListContainer>
+      
       </div>
     </BrowserRouter>
   );
