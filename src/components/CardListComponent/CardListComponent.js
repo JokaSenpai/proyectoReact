@@ -16,7 +16,7 @@ function CardListComponent() {
       {prod.map((prod) => {
         return (
           <Link to={`/detail/${prod.id}`}>
-            <CardComponent key={prod.id} data={prod}  />
+            <CardComponent key={prod.id} data={prod} />
           </Link>
         );
       })}

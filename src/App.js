@@ -12,7 +12,6 @@ import Otros from "./Pages/Otros/Otros";
 // IMPORTAR COMPONENTES
 import Navbar from "./components/Navbar/Navbar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import CardListComponent from "./components/CardListComponent/CardListComponent";
 import CardDetails from "./Pages/CardDetails/CardDetails";
 
 

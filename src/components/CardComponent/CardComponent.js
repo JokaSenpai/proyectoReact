@@ -7,7 +7,7 @@ import { CardActionArea } from '@mui/material';
 import genericPhoto from "../../imgs/sinStock.png"
 
 
-const CardComponent = ( { data })=> {
+const CardComponent = ( { data } )=> {
 return (
     <Card sx={{ maxWidth: 345 }}>
       <CardActionArea>
@@ -22,7 +22,7 @@ return (
             {data.name};
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            {data.company.catchPhrase}
+            {data.email}
           </Typography>
         </CardContent>
       </CardActionArea>
