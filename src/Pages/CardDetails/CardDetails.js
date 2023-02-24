@@ -12,7 +12,7 @@ const CardDetails = () => {
     fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
       .then((response) => response.json())
       .then((json) => setProd(json));
-  }, [id, prod]);
+  }, [id]);
 
   return (
     <div>
