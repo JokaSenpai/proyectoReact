@@ -16,9 +16,7 @@ const Navbar = () => {
           <Link to="/" className="Link">
             Home
           </Link>
-          <Link to="/Contacto" className="Link">
-            Contacto
-          </Link>
+         
           <li class="nav-item dropdown">
             
             {/* eslint-disable */}
@@ -49,6 +47,11 @@ const Navbar = () => {
               </Link>
             </div>
           </li>
+
+          <Link to="/Contacto" className="Link">
+            Contacto
+          </Link>
+          
         </ul>
         <div className="divCart">
           <CartWidget />
