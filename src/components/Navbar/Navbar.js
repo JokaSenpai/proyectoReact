@@ -8,7 +8,7 @@ import CartWidget from "../CartWidget/CartWidget";
 const Navbar = () => {
   return (
     <nav className="Navigation navbar navbar-expand-lg">
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <img src={logoimg} className="logoTori" alt="logo" />
         <p className="textBrand">ToriShop</p>
 
@@ -17,11 +17,11 @@ const Navbar = () => {
             Home
           </Link>
          
-          <li class="nav-item dropdown">
+          <li className="nav-item dropdown">
             
             {/* eslint-disable */}
             <a
-              class="nav-link dropdown-toggle"
+              className="nav-link dropdown-toggle"
               href="#"
               id="navbarDropdown"
               role="button"
@@ -34,17 +34,14 @@ const Navbar = () => {
             
             {/* eslint-enable */}
 
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <div className="dropdown-menu" aria-labelledby="navbarDropdown">
               <Link to="/FigurasAnime" className="dropdown-item">
                 Figuras Anime
               </Link>
               <Link to="/FigurasComic" className="dropdown-item">
                 Figuras Comic
               </Link>
-              <div class="dropdown-divider"></div>
-              <Link to="/Otros" className="dropdown-item">
-                Otros
-              </Link>
+             
             </div>
           </li>
 

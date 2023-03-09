@@ -1,13 +1,12 @@
 import "./App.css";
-import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 // IMPORTAR PAGES
 import Home from "./Pages/Home/Home";
 import Contacto from "./Pages/Contacto/Contacto";
 import FigurasAnime from "./Pages/FigurasAnime/FigurasAnime";
 import FigurasComic from "./Pages/FigurasComic/FigurasComic";
-import Otros from "./Pages/Otros/Otros";
 
 // IMPORTAR COMPONENTES
 import Navbar from "./components/Navbar/Navbar";
@@ -33,7 +32,6 @@ const App = () => {
           <Route path="/Contacto" element={<Contacto />} />
           <Route path="/FigurasAnime" element={<FigurasAnime />} />
           <Route path="/FigurasComic" element={<FigurasComic />} />
-          <Route path="/Otros" element={<Otros />} />
           <Route path="/detail/:id" element={<CardDetails />} />
         </Routes>
       

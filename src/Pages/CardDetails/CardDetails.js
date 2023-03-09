@@ -4,20 +4,42 @@ import { useParams } from "react-router-dom";
 import CardComponent from "../../components/CardComponent/CardComponent";
 import "./CardDetails.css";
 
+// FIREBASE
+import { db } from "../../firebase/firebaseConfig";
+import { collection, query, where, getDocs, documentId } from "firebase/firestore";
+
+
+
 const CardDetails = () => {
-  const [prod, setProd] = useState({});
+  const [figureData, setFigureData] = useState([]);
   let { id } = useParams();
 
   useEffect(() => {
-    fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
-      .then((response) => response.json())
-      .then((json) => setProd(json));
-  }, [id]);
+      const getFigure = async () =>{
+      const q = query(collection(db,"figures"), where(documentId(), "==", id));
+      const docs =[];
+      const querySnapshot = await getDocs(q);
+   
 
-  return (
-    <div>
-      <CardComponent key={prod.id} data={prod} />
-    </div>
+      querySnapshot.forEach((doc) =>{
+        docs.push({...doc.data(), id: doc.id });
+      });
+      setFigureData(docs);
+
+     };
+     getFigure();
+  },[id]);
+
+  console.log(figureData);
+  return (  
+
+          <div className="divDetails">
+           { figureData.map((data) => {
+              return  <CardComponent key={data.id} data={data}/>;
+            }) }
+            </div>
+         
+      
   );
 };
 

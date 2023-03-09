@@ -3,20 +3,38 @@ import CardComponent from "../CardComponent/CardComponent";
 import "./CardListComponent.css";
 import { Link } from "react-router-dom";
 
+// FIREBASE
+import { db } from "../../firebase/firebaseConfig";
+import { collection, query, getDocs } from "firebase/firestore";
+
 function CardListComponent() {
-  const [prod, setProds] = useState([]);
+  const [figuresData, setFiguresData] = useState([]);
+  
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users")
-      .then((response) => response.json())
-      .then((json) => setProds(json));
+   const getFigures = async () =>{
+    const q = query(collection(db,"figures"));
+    const querySnapshot = await getDocs(q); 
+
+    const docs = [];
+    
+    querySnapshot.forEach((doc) =>{
+      docs.push({...doc.data(), id: doc.id });
+    });
+    setFiguresData(docs);
+
+
+   };
+   getFigures();
+
+
   }, []);
   return (
     <div className="Card-list">
-      {prod.map((prod) => {
+      {figuresData.map((fig) => {
         return (
-          <Link to={`/detail/${prod.id}`}>
-            <CardComponent key={prod.id} data={prod} />
+          <Link to={`/detail/${fig.id}`}>
+            <CardComponent key={fig.id} data={fig} />
           </Link>
         );
       })}

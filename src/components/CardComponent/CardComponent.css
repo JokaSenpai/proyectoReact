@@ -1,0 +1,14 @@
+.body2{
+    color: black;
+    font-weight: 550;
+}
+
+.body3{
+    color: red;  
+    font-weight: 550;
+}
+.img-size{
+    width: 450px;
+	height: 450px;
+	object-fit:cover;
+}
