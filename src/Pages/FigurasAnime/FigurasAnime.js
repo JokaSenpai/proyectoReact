@@ -25,7 +25,6 @@ function FigurasAnime() {
    getFigures();
 },[]);
 
-console.log(figuresData);
 return ( 
 
         <div className="Card-list">

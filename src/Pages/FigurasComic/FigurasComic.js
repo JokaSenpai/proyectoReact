@@ -7,6 +7,7 @@ import { db } from "../../firebase/firebaseConfig";
 import { collection, query, where, getDocs} from "firebase/firestore";
 
 function FigurasComic() {
+  
   const [figuresData, setFiguresData] = useState([]);
 
   useEffect(() => {
@@ -25,7 +26,7 @@ function FigurasComic() {
    getFigures();
 },[]);
 
-console.log(figuresData);
+
 return ( 
 
         <div className="Card-list">
