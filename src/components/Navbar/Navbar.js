@@ -35,10 +35,10 @@ const Navbar = () => {
             {/* eslint-enable */}
 
             <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-              <Link to="/FigurasAnime" className="dropdown-item">
+              <Link to="/Categorias/FigurasAnime" className="dropdown-item">
                 Figuras Anime
               </Link>
-              <Link to="/FigurasComic" className="dropdown-item">
+              <Link to="/Categorias/FigurasComic" className="dropdown-item">
                 Figuras Comic
               </Link>
              
