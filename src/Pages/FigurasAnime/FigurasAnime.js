@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import CardComponent from '../../components/CardComponent/CardComponent';
+import { Link } from 'react-router-dom';
 
 // FIREBASE
 import { db } from "../../firebase/firebaseConfig";
@@ -27,9 +28,14 @@ function FigurasAnime() {
 
 return ( 
 
+
         <div className="Card-list">
          { figuresData.map((data) => {
-            return  <CardComponent key={data.id} data={data}/>;
+            return (
+            <Link to={`/detail/${data.id}`} key={data.id}>
+            <CardComponent  data={data}/>
+            </Link> 
+            ); 
           }) }
           </div>
        

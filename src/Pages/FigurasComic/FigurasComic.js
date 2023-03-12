@@ -1,42 +1,42 @@
-import { useEffect, useState } from 'react';
-import CardComponent from '../../components/CardComponent/CardComponent';
-
+import { useEffect, useState } from "react";
+import CardComponent from "../../components/CardComponent/CardComponent";
+import { Link } from "react-router-dom";
 
 // FIREBASE
 import { db } from "../../firebase/firebaseConfig";
-import { collection, query, where, getDocs} from "firebase/firestore";
+import { collection, query, where, getDocs } from "firebase/firestore";
 
 function FigurasComic() {
-  
   const [figuresData, setFiguresData] = useState([]);
 
   useEffect(() => {
-    const getFigures = async () =>{
-    const q = query(collection(db,"figures"), where("Categoria", "==", "Comic"));
-    const docs =[];
-    const querySnapshot = await getDocs(q);
- 
+    const getFigures = async () => {
+      const q = query(
+        collection(db, "figures"),
+        where("Categoria", "==", "Comic")
+      );
+      const docs = [];
+      const querySnapshot = await getDocs(q);
 
-    querySnapshot.forEach((doc) =>{
-      docs.push({...doc.data(), id: doc.id });
-    });
-    setFiguresData(docs);
+      querySnapshot.forEach((doc) => {
+        docs.push({ ...doc.data(), id: doc.id });
+      });
+      setFiguresData(docs);
+    };
+    getFigures();
+  }, []);
 
-   };
-   getFigures();
-},[]);
-
-
-return ( 
-
-        <div className="Card-list">
-         { figuresData.map((data) => {
-            return  <CardComponent key={data.id} data={data}/>;
-          }) }
-          </div>
-       
-    
-);
+  return (
+    <div className="Card-list">
+      {figuresData.map((data) => {
+        return (
+          <Link to={`/detail/${data.id}`} key={data.id}>
+            <CardComponent data={data} />
+          </Link>
+        );
+      })}
+    </div>
+  );
 }
 
 export default FigurasComic;

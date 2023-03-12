@@ -1,10 +1,11 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 
 // IMPORTAR PAGES
 import Home from "./Pages/Home/Home";
-import Contacto from "./Pages/Contacto/Contacto";
+import Contacto from "./Pages/Contacto/Contacto"
 import FigurasAnime from "./Pages/FigurasAnime/FigurasAnime";
 import FigurasComic from "./Pages/FigurasComic/FigurasComic";
 
@@ -12,11 +13,19 @@ import FigurasComic from "./Pages/FigurasComic/FigurasComic";
 import Navbar from "./components/Navbar/Navbar";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
 import CardDetails from "./Pages/CardDetails/CardDetails";
+import CartProvider from "./components/Context/CartContext";
+
 
 
 const App = () => {
+const [cartItems, setCartItems] = useState([]);
+const addToCart = (product) =>{
+  setCartItems([...cartItems, product]);
+}
+
   return (
     <BrowserRouter>
+    <CartProvider value={{cartItems,addToCart}}>
       <div className="contentxd">
         <header className="headerContent">
           <Navbar />
@@ -36,6 +45,7 @@ const App = () => {
         </Routes>
       
       </div>
+      </CartProvider>
     </BrowserRouter>
   );
 }

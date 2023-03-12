@@ -29,12 +29,13 @@ function CardListComponent() {
 
 
   }, []);
+  
   return (
     <div className="Card-list">
       {figuresData.map((fig) => {
         return (
-          <Link to={`/detail/${fig.id}`}>
-            <CardComponent key={fig.id} data={fig} />
+          <Link to={`/detail/${fig.id}`}key={fig.id}>
+            <CardComponent  data={fig} />
           </Link>
         );
       })}

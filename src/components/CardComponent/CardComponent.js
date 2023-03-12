@@ -1,17 +1,28 @@
-import React from "react";
+import React, {useContext} from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import "./CardComponent.css";
+import { CartContext } from "../Context/CartContext";
+
 
 const CardComponent = ({ data }) => {
+
+
+
+  const {addToCart} = useContext(CartContext);
+
+  const handleClick = () => {
+    addToCart(data);
+  }
+
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, height: "100%" }}>
       <CardActionArea>
         <CardMedia component="img" className="img-size" image={data.img} alt={data.id} />
-        <CardContent>
+        <CardContent className="nose">
           <Typography gutterBottom variant="h5" component="div">
           {data.Nombre}
           </Typography>
@@ -30,6 +41,12 @@ const CardComponent = ({ data }) => {
           <Typography className="body3" variant="body2" color="text.secondary">
             Precio (en USD):{data.Precio}
           </Typography>
+         
+          <div className="button-Cart" onClick={handleClick}>
+            <span className="button-text">Agregar al carro</span>
+          </div>
+  
+         
         </CardContent>
       </CardActionArea>
     </Card>
