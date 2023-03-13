@@ -1,14 +1,7 @@
 import React, { createContext, useContext, useState } from "react";
 import Swal from "sweetalert2";
 
-export const CartContext = createContext({
-  cart: [],
-  addItem: () => {},
-  removeItem: () => {},
-  clearCart: () => {},
-  increaseQty: () => {},
-  decreaseQty: () => {},
-});
+export const CartContext = createContext();
 
 export const useCart = () => useContext(CartContext);
 
