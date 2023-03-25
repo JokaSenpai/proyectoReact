@@ -34,9 +34,9 @@ function CardListComponent() {
     <div className="Card-list">
       {figuresData.map((fig) => {
         return (
-          <Link to={`/detail/${fig.id}`}key={fig.id}>
-            <CardComponent  data={fig} />
-          </Link>
+          
+            <CardComponent  data={fig} key={fig.id} />
+   
         );
       })}
     </div>

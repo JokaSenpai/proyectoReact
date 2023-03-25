@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import "./CardComponent.css";
 import { CartContext } from "../Context/CartContext";
+import { Link } from "react-router-dom";
 
 
 const CardComponent = ({ data }) => {
@@ -21,11 +22,16 @@ const CardComponent = ({ data }) => {
   return (
     <Card sx={{ maxWidth: 345, height: "100%" }}>
       <CardActionArea>
+        <Link to={`/detail/${data.id}`}>
         <CardMedia component="img" className="img-size" image={data.img} alt={data.id} />
+        </Link>
+       
         <CardContent className="nose">
+        <Link to={`/detail/${data.id}`}>
           <Typography gutterBottom variant="h5" component="div">
           {data.Nombre}
           </Typography>
+          </Link>
           <Typography className="body2" variant="body2" color="text.secondary">
             Categoria:{data.Categoria}
           </Typography>

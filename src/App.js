@@ -8,6 +8,7 @@ import Home from "./Pages/Home/Home";
 import Contacto from "./Pages/Contacto/Contacto"
 import FigurasAnime from "./Pages/FigurasAnime/FigurasAnime";
 import FigurasComic from "./Pages/FigurasComic/FigurasComic";
+import FormularioCompra from "./Pages/FormularioCompra/FormularioCompra";
 
 // IMPORTAR COMPONENTES
 import Navbar from "./components/Navbar/Navbar";
@@ -42,6 +43,7 @@ const addToCart = (product) =>{
           <Route path="/Categorias/FigurasAnime/" element={<FigurasAnime />} />
           <Route path="/Categorias/FigurasComic/" element={<FigurasComic />} />
           <Route path="/detail/:id" element={<CardDetails />} />
+          <Route path="/FinalizarCompra/" element={<FormularioCompra/>}/>
         </Routes>
       
       </div>

@@ -30,7 +30,6 @@ const CardDetails = () => {
      getFigure();
   },[id]);
 
-  console.log(figureData);
   return (  
 
           <div className="divDetails">
